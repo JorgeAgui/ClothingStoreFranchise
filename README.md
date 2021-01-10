@@ -17,7 +17,7 @@ La aplicación ha sido desplegada en contenedores docker.
 
 En el diagrama de despliegue siguiente se puede ver una visión global del sistema.
 
-![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/tree/spanish/figures/deploy.png)
+![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/deploy.png)
 
 **Contexto**
 ----------------
