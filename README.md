@@ -33,14 +33,14 @@ Para realizar el diseño del dominio de la arquitectura de microservicios que se
 
 -	 Microservicio Authentication: se encargará de gestionar el almacenamiento y autenticación de los usuarios del sistema generando JWTs (JSON Web Tokens). 
 -	Microservicio Customers: se encargará de gestionar los clientes registrados en el sistema y su carro de la compra.
--	Microservicio \textit{Catalog}: se encargará de la gestión de los productos del catálogo, de sus categorías y ofertas.
+-	Microservicio Catalog: se encargará de la gestión de los productos del catálogo, de sus categorías y ofertas.
 -	Microservicio  Inventory: se encargará de la gestión del inventario de productos en tiendas y alamcenes.
 -	Microservicio Employees: se encargará de la gestión de los empleados registrado en el sistema.
 -	Microservicio Sales: se encargará de la gestión de las ventas online y en tiendas físicas.
 En la figura siguiente se muestra el modelo de dominio del sistema desglosado en subdominios tras aplicar DDD. Cada subdominio representa el modelo de cada Microservicio que formará el sistema.
 ![fomainDesign](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/micro-domains.png)
 
-Se puede ver en el modelo de dominio en diseño Figura 4.1 que hay clases que están replicadas en
+Se puede ver en el modelo de dominio en diseño en la figura anterior que hay clases que están replicadas en
 subdominios distintos, como por ejemplo, la clase Producto del Microservicio Inventory que depende de la clase Producto del Microservicio Catalog. Estas clases representan a un Producto en una parte de la organización diferente, el Catálogo y el Inventario. Cada una de ellas contiene la información necesaria para satisfacer las necesidades de la funcionalidad del Microservicio en el que se encuentra.
 Descomponer una aplicación en microservicios implica varios retos a los que hay que enfrentarse:
 -	Latencia de red debido al acoplamiento que se crea en las comunicaciones entre microservicios.
@@ -114,7 +114,7 @@ El diseño de la comunicación entre miscorservicios de la aplicación presentad
 -	AMQP (Advanced Message Queuing Protocol): permite una comunicación solicitud/respuesta asíncrona y síncrona, además de estar diseñado para utilizarse en un sistema publish/subcribe. Se implementará mediante un bus de eventos. Será el principal protocolo de comunicación entre microservicios, debido a su tipo de comunicación asíncrona y encajar perfectamente en un sistema publish/subscribe, lo que lo hace ideal para la propagación de datos entre microservicios.
 Aunque implementar un bus de eventos respaldado por AMQP es más versátil al permitir un mayor número de métodos de comunicación además de la posibilidad de persistir los mensajes, implementar APIs REST respaldadas por HTTP es mucho más sencillo y requiere una curva de aprendizaje mucho menor que implementar un bus de eventos.
 
-**Protocolos de comunicación**
+**Comunicación asíncrona basada en mensajes**
 ----------------
 
 Como se mencionó en apartados anteriores, las entidades de los modelos como Product, Warehouse, Shop... pueden tener significado diferente en microservicios diferentes. Esto significa que ciertos datos de las entidades replicadas por los microservicios deben de ser actualizadas por el microservicio propietario de la información.
@@ -142,8 +142,10 @@ Cada microservicio tendrá su propia tabla IntegrationEventLog en su base de dat
 Si la publicación de un evento falla, los datos no serán inconsistentes, ya que el evento seguirá en la tabla IntegrationEventLog con el estado "listo para publicar". Este evento se reintentará publicar cuando se reinicie el microservicio o el bus de eventos.
 
 Con este enfoque se persistirán los eventos en la tabla IntegrationEventLog únicamente en los microservicios que vayan a publicar el evento (microservicios productores del evento).
+
 **Diagramas de comunicación**
 ----------------
+
 En este apartado se explicará de manera resumida y con ayuda de diagramas de secuencia como ejemplo, el diseño de la comunicación entre microservicios que se ha realizado.
 -	Publish/Subscribe:
 Patrón de mensajería asíncrono que se ha utilizado para propagar los cambios en los datos del dominio en los microservicios en los que se encuentren replicados. 
@@ -172,5 +174,12 @@ Con el fin de asegurar la seguridad del sistema los tokens de acceso generados p
 
 En la Figura siguiente podemos ver una representación visual del diseño de la autenticación del sistema.
 ![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/authentication.png )
+
 Cuando un cliente inicia sesión, el microservicio authentication genera un token firmado y cifrado que se almacena temporalmente en la aplicación cliente. Cuando la aplicación cliente realice cualquier solicitud a back end este token de acceso será enviado en la cabecera de la solicitud http. La API Gateway descifra y valida el token cifrado (JWE), si todo es correcto enruta la solicitud con el token firmado (JWS) al microservicio correspondiente donde también será validado.
 
+**Implementación**
+----------------
+
+Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización que podemos ver en el siguiente enlace.
+
+- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
