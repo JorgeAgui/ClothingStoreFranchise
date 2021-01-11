@@ -17,7 +17,7 @@ La aplicación ha sido desplegada en contenedores docker.
 
 En el diagrama de despliegue siguiente se puede ver una visión global del sistema.
 
-![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/deploy.png)
+![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/deployApp.png)
 
 **Contexto**
 ----------------
@@ -180,6 +180,6 @@ Cuando un cliente inicia sesión, el microservicio authentication genera un toke
 **Implementación**
 ----------------
 
-Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización que podemos ver en el siguiente enlace.
+Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
 
 - [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
