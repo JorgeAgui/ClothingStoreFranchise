@@ -1,4 +1,4 @@
-# ClothingStoreFranchise
+# Diseño e implementación de una aplicación cloud políglota basada en arquitectura de microservicios
 
 **Resumen del Proyecto**
 ----------------
