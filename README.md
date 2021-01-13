@@ -1,4 +1,4 @@
-# Diseño e implementación de una aplicación cloud políglota basada en arquitectura de microservicios
+# Diseño e implementación de una aplicación cloud políglota basada en una arquitectura de microservicios
 
 **Resumen del Proyecto**
 ----------------
