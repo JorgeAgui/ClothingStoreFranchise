@@ -183,3 +183,12 @@ Cuando un cliente inicia sesión, el microservicio authentication genera un toke
 Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
 
 - [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
+
+**Aspecto de la aplicación**
+----------------
+
+![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/productCatalog.png )
+
+![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/detail.png)
+
+![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/inventory.png )
