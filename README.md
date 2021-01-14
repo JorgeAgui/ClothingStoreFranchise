@@ -187,8 +187,8 @@ Con el fin de aislar el desarrollo de cada microservicio se ha creado un reposit
 **Aspecto de la aplicación**
 ----------------
 
-![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/productCatalog.png )
+![productCatalog](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/productCatalog.PNG)
 
-![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/detail.png)
+![detail](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/detail.PNG)
 
-![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/inventory.png )
+![inventory](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/inventory.PNG)
