@@ -3,7 +3,7 @@
 **Resumen del Proyecto**
 ----------------
 
-El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en esta arquitectura. Se han seguido las buenas prácticas que exigen este tipo de arquitectura con el objetivo de diseñar e implementar una aplicación con una alta disponibilidad, una alta escalabilidad y resistente a fallos.
+El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin de poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en esta arquitectura. Se han seguido las buenas prácticas que exigen este tipo de arquitectura con el objetivo de diseñar e implementar una aplicación con una alta disponibilidad, una alta escalabilidad y resistente a fallos.
 
 Se trata de una aplicación cloud poliglota basada en una arquitectura de microservicios para dar una solución tecnológica al negocio de una franquicia de tiendas de ropa ficticia.
 
@@ -13,7 +13,7 @@ La comunicación entre la aplicación cliente y los microservicios es a través 
 
 La comunicación entre microservicios se realiza salvo casos excepcionales de forma asíncrona mediante un bus de eventos.
 
-La aplicación ha sido desplegada en contenedores docker.
+La aplicación ha sido desplegada en Google Kubernetes Engine.
 
 En el diagrama de despliegue siguiente se puede ver una visión global del sistema.
 
