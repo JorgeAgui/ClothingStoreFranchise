@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: employees
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: employees
+  ports:
+  - port: 4552
+    targetPort: 4552
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: employees-service
+spec:
+  type: ClusterIP
+  selector:
+    app: employees
+  ports:
+  - port: 4552
+    targetPort: 4552
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employees
+  labels:
+    app: employees
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: employees
+        env:
+        - name: eureka.client.serviceUrl.defaultZone
+          value: http://eureka:8081/eureka/
+        - name: DB_HOST
+          value: 127.0.0.1:1433
+        image: valdearados/clothing_store_franchise_employees
+        ports:
+        - containerPort: 4552
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.19.1
+        command: ["/cloud_sql_proxy",
+            "-instances=divine-builder-276216:europe-west2:employees-db=tcp:1433",
+            "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+        - name: cloudsql-instance-credentials
+          mountPath: /secrets/cloudsql
+          readOnly: true
+      volumes:
+      - name: cloudsql-instance-credentials
+        secret:
+          secretName: cloudsql-instance-credentials
+      - name: cloudsql
+        emptyDir:

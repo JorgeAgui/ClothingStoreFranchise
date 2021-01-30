@@ -1,0 +1,131 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
+    ports:
+        - 5672:5672
+        - 15672:15672
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  
+  sql-server-db:
+    container_name: sql-server-db
+    image: microsoft/mssql-server-linux:2017-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "root"
+      ACCEPT_EULA: "Y"
+  
+  eureka:
+    build:
+      context: ../Spring.Discovery/
+    image: valdearados/clothing_store_franchise_discovery
+    container_name: discovery
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 8081:8081
+      
+  gateway:
+    build:
+      context: ../Spring.Gateway/
+    image: valdearados/clothing_store_franchise_gateway
+    container_name: gateway
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 8080:8080
+      
+  authentication:
+    build:
+      context: ../Spring.Authentication/
+    image: valdearados/clothing_store_franchise_authentication
+    container_name: authentication
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 8083:8083
+    depends_on:
+      - mysql
+      - rabbitmq
+      - gateway
+  
+  sales:
+    build:
+      context: ../Spring.Sales/
+    image: valdearados/clothing_store_franchise_sales
+    container_name: sales
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 8085:8085
+    depends_on:
+      - mysql
+      - rabbitmq
+      - gateway
+      
+  inventory:
+    build:
+      context: ../Spring.Inventory/
+    image: valdearados/clothing_store_franchise_inventory
+    container_name: inventory
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 8084:8084
+    depends_on:
+      - mysql
+      - rabbitmq
+      - gateway
+      
+  customers:
+    image: valdearados/clothing_store_franchise_customers
+    container_name: customers
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://eureka:8081/eureka/
+    tty: false
+    ports:
+      - 4550:4550
+    depends_on:
+      - sql-server-db
+      - rabbitmq
+      - gateway
+      
+  catalog:
+    image: valdearados/clothing_store_franchise_catalog
+    container_name: catalog
+    tty: false
+    ports:
+      - 4551:4551
+    depends_on:
+      - sql-server-db
+      - rabbitmq
+      - gateway 
+
+  employees:
+    image: valdearados/clothing_store_franchise_employees
+    container_name: employees
+    tty: false
+    ports:
+      - 4552:4552
+    depends_on:
+      - sql-server-db
+      - rabbitmq
+      - gateway
