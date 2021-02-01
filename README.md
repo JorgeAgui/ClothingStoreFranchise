@@ -19,6 +19,13 @@ En el diagrama de despliegue siguiente se puede ver una visión global del siste
 
 ![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/deploy_kubernetes.png)
 
+**Implementación**
+----------------
+
+Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
+
+- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
+
 **Contexto**
 ----------------
 
@@ -178,13 +185,6 @@ En la Figura siguiente podemos ver una representación visual del diseño de la 
 ![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/authentication.png )
 
 Cuando un cliente inicia sesión, el microservicio authentication genera un token firmado y cifrado que se almacena temporalmente en la aplicación cliente. Cuando la aplicación cliente realice cualquier solicitud al back end, este token de acceso será enviado en la cabecera de la solicitud http. La API Gateway descifra y valida el token cifrado (JWE), si todo es correcto enruta la solicitud con el token firmado (JWS) al microservicio correspondiente donde también será validado.
-
-**Implementación**
-----------------
-
-Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
-
-- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
 
 **Aspecto de la aplicación**
 ----------------
