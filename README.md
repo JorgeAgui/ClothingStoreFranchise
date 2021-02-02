@@ -3,7 +3,9 @@
 **Resumen del Proyecto**
 ----------------
 
-El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin de poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en esta arquitectura. Se han seguido las buenas prácticas que exigen este tipo de arquitectura con el objetivo de diseñar e implementar una aplicación con una alta disponibilidad, una alta escalabilidad y resistente a fallos.
+El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin de poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en este tipo de arquitectura siguiendo las buenas prácticas que exigen este tipo de arquitectura.
+
+El resultado es una aplicación resistente a fallos que ofrece una alta disponibilidad y una alta escalabilidad.
 
 El front end de esta aplicación esta implementado por una aplicación Angular y el back end por un conjunto de microservicios implementados en Spring Boot o en ASP.Net Core. 
 
