@@ -3,7 +3,7 @@
 **Resumen del Proyecto**
 ----------------
 
-El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin de poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en este tipo de arquitectura siguiendo las buenas prácticas que exigen este tipo de arquitectura.
+El objetivo de este proyecto de software es realizar un estudio avanzado sobre las arquitecturas de microservicios. Con el fin de poner en práctica los conocimientos aprendidos, se ha realizado el diseño e implementación de una aplicación basada en este tipo de arquitectura siguiendo las buenas prácticas recomendadas.
 
 El resultado es una aplicación resistente a fallos, que ofrece una alta disponibilidad y una alta escalabilidad.
 
