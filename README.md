@@ -22,6 +22,6 @@ En el diagrama de despliegue siguiente se puede ver una visión global del siste
 **Implementación**
 ----------------
 
-Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
+Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización que se encuentra en el siguiente enlace.
 
 - [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
