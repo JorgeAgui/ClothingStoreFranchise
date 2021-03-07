@@ -24,6 +24,6 @@ An overview of the system can be seen in the deployment diagram below.
 **Implementation**
 ----------------
 
-In order to isolate the development of each microservice, a repository has been created for each microservice. This repositories have been grouped in an GitHub organization that you can find in the following link.
+In order to isolate the development of each microservice, a repository has been created for each microservice. This repositories have been grouped in a GitHub organization that you can find in the following link.
 
 - [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
