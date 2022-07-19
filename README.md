@@ -21,11 +21,12 @@ An overview of the system can be seen in the deployment diagram below.
 
 ![deploy](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/deploy_kubernetes.png)
 
-**Final Degree Project spanish report**
+**Final University Degree Project Spanish Report**
+----------------
 
 In the following link you can see a university report with the complete detail of an initial project design version:
 
-[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://drive.google.com/file/d/1n8LRlJwmtoOt1zs1OlBMOuQQwCfEsge5/view?usp=sharing)
 
 **Implementation**
 ----------------
