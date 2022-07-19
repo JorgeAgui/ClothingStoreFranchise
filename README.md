@@ -1,5 +1,12 @@
 # Sistema basado en arquitectura de microservicios. Implementación de una aplicación cloud políglota.
 
+**Organización GitHub del proyecto**
+----------------
+
+Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización que se encuentra en el siguiente enlace.
+
+- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
+
 **Resumen del Proyecto**
 ----------------
 
@@ -32,14 +39,6 @@ In the following link you can see an university report with the complete detail 
 En el siguiente video se muestra una demo de una versión inicial de la aplicaión y los detalles del despliegue en Google Kubernetes Engine(GKE):
 
 [<img src="https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/portada_demo.jpg" width="50%">](https://youtu.be/MIGo7PZA-PA)
-
-
-**Organización GitHub del proyecto**
-----------------
-
-Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización que se encuentra en el siguiente enlace.
-
-- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
 
 **Diseño guiado por el Dominio (DDD)**
 ----------------
@@ -180,17 +179,4 @@ En la Figura siguiente podemos ver una representación visual del diseño de la 
 ![authentication](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/authentication.png )
 
 Cuando un cliente inicia sesión, el microservicio authentication genera un token firmado y cifrado que se almacena temporalmente en la aplicación cliente. Cuando la aplicación cliente realice cualquier solicitud al back end, este token de acceso será enviado en la cabecera de la solicitud http. La API Gateway descifra y valida el token cifrado (JWE), si todo es correcto enruta la solicitud con el token firmado (JWS) al microservicio correspondiente donde también será validado.
-
-**Implementación**
-----------------
-Con el fin de aislar el desarrollo de cada microservicio se ha creado un repositorio por cada microservicio. Estos repositorios se han agrupado en una organización a la que podemos acceder en el siguiente enlace.
-- [ClothingStoreFranchise](https://github.com/ClothingStoreFranchise)
-
-**Aspecto de la aplicación**
-----------------
-![productCatalog](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/productCatalog.PNG)
-
-![detail](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/detail.PNG)
-
-![inventory](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/inventory.PNG)
 
