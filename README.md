@@ -20,7 +20,7 @@ The front-end of this application is implemented by an Angular application and t
 
 The commumication between client app and the microservices is throught Api Gateway and is carried out via API REST.
 
-The communication across microservices is carried out asynchronously throught an event bus (RabbitMQ) and synchronously when is required through the RESTful api.
+The communication across microservices is carried out asynchronously throught an event bus (RabbitMQ) and synchronously when is required through RESTful api.
 
 The application has been deployed in Google Kubernetes Engine.
 
