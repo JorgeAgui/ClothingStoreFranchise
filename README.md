@@ -84,7 +84,7 @@ La API Gateway esta compuesta por un Service Discovery, un Load Balancer y un Ci
 **Consistencia de datos en arquitecturas de microservicios**
 ----------------
 
-Cada microservicio del sistema tiene su propia base de datos. Los datos almacenados en la base de datos del microservicio son privados y solo pueden ser accedidos a través de las APIs del microservicio. Esto supone un reto de a la hora de implementar procesos de negocio ento-to-end mientras se mantiene la consistencia a través de múltiples microservicios.
+Cada microservicio del sistema tiene su propia base de datos. Los datos almacenados en la base de datos del microservicio son privados y solo pueden ser accedidos a través de las APIs del microservicio. Esto supone un reto de diseño a la hora de implementar procesos de negocio ento-to-end mientras se mantiene la consistencia a través de múltiples microservicios.
 
 Tomando como ejemplo la aplicación desarrollada, el microservicio Catalog contiene la información de todos los Productos. El microservicio Inventory gestiona los datos temporales sobre el inventario de productos en tiendas y almacenes. Cuando el precio o el nombre de un producto cambia en el microservicio Catalog, este producto también debe de ser actualizado en el microservicio Inventory.
 
