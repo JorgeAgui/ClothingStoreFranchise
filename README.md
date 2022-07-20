@@ -71,7 +71,7 @@ Un sistema cloud debe tolerar los fallos e intentar recuperarse automáticamente
 
 Desplegar los microservicios en contenedores permite crear fácilmente réplicas del microservicio, lo que evita problemas de sobrecarga. 
 
-Estas características se han tenido en cuenta a la hora de diseñar este sistema basado en una arquitectura de microservicios y se volverá a hablar de ellas a lo largo de esta memoria.
+Estas características se han tenido en cuenta a la hora de diseñar este sistema basado en una arquitectura de microservicios.
 
 **Diseño de la API Gateway**
 ----------------
