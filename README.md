@@ -141,7 +141,7 @@ En una comunicación manejada por eventos (event-driven), un microservicio publi
 
 Cuando se publican eventos a través de un sistema distribuido de mensajería como un bus de eventos, existe el problema de actualizar de forma atómica la base de datos del microservicio y de publicar el evento. Se debe de evitar el caso en el que por algún motivo se produzca un fallo al persistir los datos en la base de datos del microservicio y estos datos si que se publiquen en el bus de eventos o viceversa. Esto dejaría el sistema en un estado inconsistente.
 
-La solución que se llevará a cabo será implementar una simplificación del patrón \textit{Event Sourcing} combinado con una tabla de base de datos transaccional. Se usarán estados en los eventos como "listo para publicar", esto eventos se almacenarán en una tabla llamada IntegrationEventLog y se actualizará su estado según vaya progresando en sus fases desde que se crea el evento hasta que se publica.
+La solución que se llevará a cabo será implementar una simplificación del patrón Event Sourcing combinado con una tabla de base de datos transaccional. Se usarán estados en los eventos como "listo para publicar", esto eventos se almacenarán en una tabla llamada IntegrationEventLog y se actualizará su estado según vaya progresando en sus fases desde que se crea el evento hasta que se publica.
 En la siguiente figura se muestra el diseño de la tabla IntegrationEventLog.
 
 ![integrationEventDB](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/integrationEventDB.png )
