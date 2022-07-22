@@ -154,7 +154,7 @@ Con este enfoque se almacenarán los eventos en la tabla IntegrationEventLog ún
 
 **Diagramas de comunicación**
 ----------------
-En este apartado se explicará de manera resumida y con ayuda de diagramas de se
+En este apartado se explicará de manera resumida y con ayuda de diagramas de secuencia como ejemplo, el diseño de la comunicación entre microservicios que se ha realizado.
 -	Publish/Subscribe:
 Patrón de mensajería asíncrono que se ha utilizado para propagar los cambios en los datos del dominio en los microservicios en los que se encuentren replicados.
 
