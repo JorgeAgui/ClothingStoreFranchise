@@ -158,7 +158,7 @@ En este apartado se explicará de manera resumida y con ayuda de diagramas de se
 -	Publish/Subscribe:
 Patrón de mensajería asíncrono que se ha utilizado para propagar los cambios en los datos del dominio en los microservicios en los que se encuentren replicados.
 
-El microservicio Publisher publica un evento en el message broker con una filosofía de envía y olvida. Los microservicios subscritos a ese evento (Subscribers) recibirán los datos del evento de forma asíncrona. El microservicio Publisher es el propietario de los datos que publica, estos datos no deben de ser modificados por ningún microservicio Subscriber. En los diagramas de secuencia siguientes se muestra cómo se han diseñado las comunicaciones para la aplicación usando este patrón.
+El microservicio Publisher publica un evento en el message broker con una filosofía de envía y olvida. Los microservicios suscritos a ese evento (Subscribers) recibirán los datos del evento de forma asíncrona. El microservicio Publisher es el propietario de los datos que publica, estos datos no deben de ser modificados por ningún microservicio Subscriber. En los diagramas de secuencia siguientes se muestra cómo se han diseñado las comunicaciones para la aplicación usando este patrón.
 ![CreateProductEvent](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/CreateProductEvent.png )
 
 ![UpdateWarehouseEvent](https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/UpdateWarehouseEvent.png )
