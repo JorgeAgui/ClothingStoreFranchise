@@ -31,7 +31,7 @@ An overview of the system can be seen in the deployment diagram below.
 **Final University Degree Project Spanish Report**
 ----------------
 
-In the following link you can see a university report with the complete detail of an initial project design version:
+In the following link you can see an university report with the complete detail of an initial project design version:
 
 [<img src="https://github.com/JorgeAgui/ClothingStoreFranchise/blob/spanish/figures/Portada-TFG.PNG" width="50%">](https://drive.google.com/file/d/1n8LRlJwmtoOt1zs1OlBMOuQQwCfEsge5/view?usp=sharing)
 
