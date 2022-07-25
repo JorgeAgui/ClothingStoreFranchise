@@ -134,7 +134,7 @@ Como se mencionó en apartados anteriores, las entidades de los modelos como Pro
 La solución que se implementará para propagar los cambios a través de múltiples microservicios será una consistencia de datos eventual y una comunicación manejada por eventos (event-driven) basada en mensajes asíncronos.
 Al utilizar mensajería, los procesos se comunican intercambiando mensajes de forma asíncrona. El cliente envía una solicitud a un servicio enviando un mensaje, si el servicio necesita responder al cliente, envía un mensaje diferente de respuesta al cliente. El cliente asume que la respuesta no será inmediata o que no recibirá respuesta.
 Un mensaje esta compuesto por una cabecera y un cuerpo. Los mensajes serán enviados mediante el protocolo AMQP. 
-En una comunicación manejada por eventos (event-driven), un microservicio publica eventos en un bus de eventos cuando algo cambie en su dominio y varios microservicios se subscriben a esos eventos para ser notificados de forma asíncrona siempre que se realice una publicación de dichos eventos. Este sistema publish/subscribe será implementado usando un bus de eventos.
+En una comunicación manejada por eventos (event-driven), un microservicio publica eventos en un bus de eventos cuando algo cambie en su dominio y varios microservicios se suscriben a esos eventos para ser notificados de forma asíncrona siempre que se realice una publicación de dichos eventos. Este sistema publish/subscribe será implementado usando un bus de eventos.
 
 **Event Sourcing simplificado**
 ----------------
